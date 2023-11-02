@@ -7,11 +7,12 @@
 .container {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
 
   @include mobile {
     overflow: hidden;
+    flex-wrap: wrap;
+    margin-top: size(60);
   }
 }
 
@@ -37,15 +38,15 @@
   @include mobile {
     width: 100%;
     background-color: $gray900;
-    padding-bottom: size(70);
+    padding-bottom: size(60);
   }
 }
 
 .heading {
-  padding: size(30);
+  padding: size($spacing32);
 
   @include mobile {
-    padding: size(20) size(10);
+    padding: size($spacing24) size($spacing12);
   }
 }
 
@@ -106,12 +107,11 @@
 }
 
 .text {
-  padding: size(30);
-
   @include paragraph;
+  padding: size($spacing32);
 
   @include mobile {
-    padding: size(10);
+    padding: size($spacing12);
   }
 }
 

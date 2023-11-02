@@ -1,7 +1,8 @@
-@import 'src/styles/typography';
-@import 'src/styles/helpers';
-@import 'src/styles/colors';
-@import 'src/styles/mixins';
+@use '~styles/helpers' as *;
+@use '~styles/colors' as *;
+@use '~styles/typography' as *;
+@use '~styles/mixins' as *;
+@use '~styles/paddings' as *;
 
 .container {
   position: absolute;
@@ -11,15 +12,16 @@
   flex-direction: column;
   justify-content: space-between;
   width: size(272);
-  height: 100vh;
+  height: 98.5vh;
   z-index: 2;
 
   @include mobile {
     position: relative;
     left: unset;
-    top: unset;
+    top: size($spacing24);
+    width: 100%;
     height: 100%;
-    width: size(158);
+    width: size(165);
   }
 }
 
@@ -27,13 +29,12 @@
   width: size(512);
   transform-origin: top left;
   transition: 0.4s opacity;
-  margin-top: size(20);
+  margin-top: size($spacing32);
   will-change: transform, opacity;
 
   @include mobile {
     position: absolute;
-    top: 0;
-    left: size(10);
+    left: size($spacing12);
     width: 95%;
     margin-top: 0;
   }
@@ -61,7 +62,7 @@
 }
 
 .linkWrapper {
-  width: size(272);
+  width: size(270);
   margin-bottom: size(30);
   background-color: $gray900;
 
@@ -81,5 +82,5 @@
 }
 
 .bottomLine {
-  width: calc(100% + 2px);
+  width: 100%;
 }

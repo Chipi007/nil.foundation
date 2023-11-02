@@ -7,8 +7,6 @@ import FooterAnimationSection from 'components/FooterAnimationSection'
 import JoinSection, { getJoinSectionProps } from 'components/JoinSection'
 import Intro from './Intro'
 import JoinUs from './JoinUs'
-import Jobs from './Jobs'
-
 import s from './Careers.module.scss'
 import { careersPageData } from 'stubs/careersPageData'
 import WhiteRectangleLine from 'components/WhiteRectangleLine'
@@ -35,7 +33,7 @@ const Careers = ({ data }: CareersProps) => {
       <div className={s.root}>
         <div className={s.content}>
           <Intro data={data.intro} />
-          <JoinUs data={data.joinUs} className={s.joinUs} />
+          <JoinUs data={data.joinUs} />
           <JoinSection {...getJoinSectionProps(data)} />
           <WhiteRectangleLine
             marginTop={isMobile ? whiteRectangleLineMobileMarginTop : whiteRectangleLineMarginTop}

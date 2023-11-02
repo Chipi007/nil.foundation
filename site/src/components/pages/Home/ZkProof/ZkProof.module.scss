@@ -1,6 +1,7 @@
 @use '~styles/colors' as *;
 @use '~styles/helpers' as *;
 @use '~styles/mixins' as *;
+@use '~styles/paddings' as *;
 
 .root {
   display: flex;
@@ -68,15 +69,14 @@
 
   & > div:first-child {
     margin-top: size(30);
+    padding-top: size($spacing48);
   }
 }
 
 .box {
-  &:not(:last-of-type) {
-    margin-bottom: size(60);
+  margin-bottom: size($spacing64);
 
-    @include mobile {
-      margin-bottom: size(20);
-    }
+  @include mobile {
+    margin-bottom: unset;
   }
 }
