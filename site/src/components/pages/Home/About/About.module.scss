@@ -26,8 +26,6 @@
 
 .right {
   position: relative;
-  margin-top: size(180);
-  height: 100%;
 
   &:after {
     content: '';
@@ -46,6 +44,41 @@
   @include mobile {
     margin-top: 0;
   }
+}
+
+.rightHeader {
+  display: flex;
+
+  & > div:nth-child(1) {
+    margin-top: size(30);
+  }
+
+  & > div:nth-child(2) {
+    margin-top: size(60);
+  }
+
+  & > div {
+    flex-basis: 50%;
+    background-color: $gray900;
+  }
+}
+
+.rightFooter {
+  display: flex;
+
+  & > div:nth-child(1) {
+    padding-top: size(30);
+  }
+
+  & > div {
+    flex-basis: 50%;
+    height: 100%;
+    background-color: $gray900;
+  }
+}
+
+.link {
+  margin-bottom: size($spacing16);
 }
 
 .description {

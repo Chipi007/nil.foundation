@@ -8,8 +8,12 @@
   display: flex;
   align-items: flex-start;
 
+  margin-bottom: size(178);
+
   @include mobile {
     flex-direction: column;
+
+    margin-bottom: 0;
   }
 }
 
@@ -23,7 +27,7 @@
 }
 
 .right {
-  margin-top: size(150);
+  margin-top: size(181);
 
   @include mobile {
     margin-top: 0;
@@ -112,12 +116,12 @@
 }
 
 .button {
-  padding-top: size(104);
+  padding-top: size(24);
   padding-bottom: size(24);
   background-color: $gray900;
 
   @include mobile {
-    padding-top: size(58);
+    padding-top: size(65);
     padding-bottom: size(10);
   }
 }
