@@ -7,6 +7,7 @@ import PropTypes, { InferProps } from 'prop-types'
 import s from './BlogsPage.module.scss'
 import { MappedCategory, MappedTag } from 'src/strapi/types/entities'
 import { useRouter } from 'next/router'
+import {BUTTON_KIND, Button as ToggleButton} from '@nilfoundation/ui-kit'
 
 type BlogNavigationProps = {
   activeCategory?: string
@@ -47,14 +48,15 @@ function BlogNavigation({ activeCategory, activeTag, categories, tags, className
         {tags && (
           <div className={s.tags}>
             {tags.map((tag) => (
-              <TagButton
-                className={cx({
-                  [s.activeTag]: tag.slug === activeTag,
-                })}
-                key={tag.slug}
-                tag={tag.name}
-                href={`/blog/tag/${tag.slug}`}
-              />
+              // <TagButton
+              //   className={cx({
+              //     [s.activeTag]: tag.slug === activeTag,
+              //   })}
+              //   key={tag.slug}
+              //   tag={tag.name}
+              //   href={`/blog/tag/${tag.slug}`}
+              // />
+            <ToggleButton key={tag.slug} kind={BUTTON_KIND.toggle}>{tag.name}</ToggleButton>
             ))}
           </div>
         )}

@@ -23,6 +23,7 @@ import { Meta } from 'entities/Meta'
 import { MappedBlog, MappedCategory, MappedTag } from 'src/strapi/types/entities'
 import { Card } from 'components/Card'
 import { blogsPageFooterItemData, blogsPageFooterMobileItemData } from './data'
+import {BUTTON_KIND, Button as ToggleButton} from '@nilfoundation/ui-kit'
 
 type BlogsPageProps = {
   data: {
@@ -94,6 +95,7 @@ function BlogsPage({ data, activeTag, activeCategory }: BlogsPageProps) {
                           router.push(`/blog/tag/${tag}`)
                         }}
                       />
+                      // <ToggleButton key={tag.slug} kind={BUTTON_KIND.toggle}>{tag.name}</ToggleButton>
                     ))}
                   </div>
                 </div>

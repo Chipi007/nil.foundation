@@ -10,10 +10,22 @@ import { InferGetStaticPropsType } from 'next'
 import { Post } from 'entities/Post'
 import { Tag } from 'entities/tag'
 import { Category } from 'entities/Category'
+import { BaseProvider } from "baseui";
+import { Client as Styletron } from "styletron-engine-atomic";
+import { Provider as StyletronProvider } from "styletron-react";
+import { createTheme, Button } from "@nilfoundation/ui-kit"
+
+const engine = new Styletron();
+const {theme} = createTheme(engine);
 
 const Blogs = ({ cms, seo }: InferGetStaticPropsType<typeof getStaticProps>) => (
+
   <MetaLayout seo={seo}>
-    <BlogsPage data={cms} />
+    {/* <StyletronProvider value={engine}>
+      <BaseProvider theme={theme}> */}
+        <BlogsPage data={cms} />
+      {/* </BaseProvider>
+    </StyletronProvider> */}
   </MetaLayout>
 )
 
